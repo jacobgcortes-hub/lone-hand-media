@@ -1,0 +1,35 @@
+{
+  "eyebrow": "The Hand We Deal",
+  "title": "Four cards. One winning play.",
+  "intro": "Every brand needs a full hand — not a single trick. We stack photography, video, organic and paid into one coordinated push.",
+  "items": [
+    {
+      "suit": "♠",
+      "tone": "bone",
+      "title": "Photography",
+      "copy": "Editorial, product and brand photography with a cinematic edge — lit, styled and graded to stop the scroll.",
+      "points": ["Brand & lifestyle", "Product & e-comm", "Events & headshots"]
+    },
+    {
+      "suit": "♥",
+      "tone": "red",
+      "title": "Videography",
+      "copy": "Short-form reels to full brand films. Story-led, motion-rich, and cut for the platform it lives on.",
+      "points": ["Reels & TikTok", "Brand films", "Ad creative"]
+    },
+    {
+      "suit": "♣",
+      "tone": "bone",
+      "title": "Social Marketing",
+      "copy": "Strategy, calendar, posting and community. We run the table so your feed compounds month over month.",
+      "points": ["Content strategy", "Posting & scheduling", "Community mgmt"]
+    },
+    {
+      "suit": "♦",
+      "tone": "red",
+      "title": "Paid & Growth",
+      "copy": "Creative built to convert, plus the paid spend behind it — tested, tracked and tuned to ROAS.",
+      "points": ["Meta & TikTok ads", "Creative testing", "Analytics & reporting"]
+    }
+  ]
+}

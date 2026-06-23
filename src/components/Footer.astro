@@ -1,0 +1,51 @@
+---
+import Logo from './Logo.astro';
+import site from '../data/site.json';
+
+const cols = [
+  { title: 'Studio', links: [{ l: 'Work', h: '#work' }, { l: 'Services', h: '#services' }, { l: 'Process', h: '#process' }, { l: 'Pricing', h: '#pricing' }] },
+  {
+    title: 'Connect',
+    links: [...site.social.map((s) => ({ l: s.platform, h: s.href })), { l: 'Contact', h: '#contact' }],
+  },
+];
+---
+
+<footer class="border-t border-ink-line bg-ink-soft">
+  <div class="mx-auto max-w-7xl px-5 py-14 md:px-8">
+    <div class="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr]">
+      <div>
+        <Logo />
+        <p class="mt-5 max-w-xs text-sm leading-relaxed text-bone-dim">
+          A cinematic photography, video and social-marketing studio. We deal brands a winning hand.
+        </p>
+      </div>
+
+      {
+        cols.map((c) => (
+          <div>
+            <h3 class="text-xs font-semibold uppercase tracking-[0.22em] text-tan">{c.title}</h3>
+            <ul class="mt-4 space-y-2.5">
+              {c.links.map((link) => (
+                <li>
+                  <a href={link.h} class="text-sm text-bone-dim transition-colors hover:text-bone">
+                    {link.l}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="rule-gold mt-12"></div>
+
+    <div class="mt-6 flex flex-col items-center justify-between gap-3 text-xs text-bone-faint sm:flex-row">
+      <p>© 2026 {site.brand.name}. All rights reserved.</p>
+      <p class="flex items-center gap-2">
+        Dealt with intent <span class="text-red-bright">♥</span>
+      </p>
+    </div>
+  </div>
+</footer>

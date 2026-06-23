@@ -1,0 +1,128 @@
+---
+import site from '../data/site.json';
+const { email, phone, phoneHref } = site.contact;
+
+const services = ['Photography', 'Videography', 'Social Marketing', 'Paid & Growth', 'Not sure yet'];
+const budgets = ['$1.5k – $3k', '$3k – $6k', '$6k – $10k', '$10k+'];
+
+const contacts = [
+  { label: 'Email', value: email, href: `mailto:${email}` },
+  { label: 'Call', value: phone, href: `tel:${phoneHref}` },
+];
+---
+
+<section id="contact" class="relative overflow-hidden border-t border-ink-line py-24 md:py-32">
+  <div class="felt pointer-events-none absolute inset-0 opacity-80"></div>
+  <div class="relative mx-auto grid max-w-7xl gap-14 px-5 md:px-8 lg:grid-cols-2">
+    <!-- Left: pitch -->
+    <div class="flex flex-col justify-center">
+      <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.28em] text-tan" data-reveal>
+        <span class="h-px w-6 bg-tan/60"></span>
+        Make Your Move
+      </p>
+      <h2 class="mt-4 font-display text-5xl font-bold leading-[1.15] text-bone md:text-6xl" data-reveal style="--reveal-delay:90ms">
+        Let’s deal you a<br /><span class="text-red-bright">winning hand.</span>
+      </h2>
+      <p class="mt-5 max-w-md text-lg leading-relaxed text-bone-dim" data-reveal style="--reveal-delay:180ms">
+        Tell us about your brand and goals. We’ll reply within one business day with a plan and a quote — no chips down required.
+      </p>
+
+      <div class="mt-9 space-y-4" data-reveal style="--reveal-delay:260ms">
+        {
+          contacts.map((c) => (
+            <a href={c.href} class="group flex items-center gap-4 text-bone-dim transition-colors hover:text-bone">
+              <span class="grid h-10 w-10 place-content-center rounded-xl border border-ink-line bg-ink-card text-tan">
+                {c.label === 'Email' ? (
+                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none"><path d="M2.5 5.5h15v9h-15z" stroke="currentColor" stroke-width="1.4"/><path d="m3 6 7 5 7-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                ) : (
+                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none"><path d="M4 3h3l1.5 4-2 1.5a11 11 0 0 0 5 5L17 13l-2 3a2 2 0 0 1-2 1A12 12 0 0 1 3 5a2 2 0 0 1 1-2Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+                )}
+              </span>
+              <span>
+                <span class="block text-xs uppercase tracking-wider text-bone-faint">{c.label}</span>
+                <span class="block text-sm font-medium">{c.value}</span>
+              </span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Right: form -->
+    <form
+      class="rounded-3xl border border-ink-line bg-ink-card/80 p-7 backdrop-blur md:p-9"
+      data-reveal
+      style="--reveal-delay:200ms"
+      novalidate
+    >
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div class="sm:col-span-1">
+          <label for="name" class="mb-2 block text-sm font-medium text-bone">Name</label>
+          <input id="name" name="name" type="text" required autocomplete="name" placeholder="Jane Doe"
+            class="w-full rounded-xl border border-ink-line bg-ink px-4 py-3 text-sm text-bone placeholder:text-bone-faint transition-colors focus:border-tan focus:outline-none focus:ring-2 focus:ring-tan/30" />
+        </div>
+        <div class="sm:col-span-1">
+          <label for="email" class="mb-2 block text-sm font-medium text-bone">Email</label>
+          <input id="email" name="email" type="email" required autocomplete="email" placeholder="jane@brand.com"
+            class="w-full rounded-xl border border-ink-line bg-ink px-4 py-3 text-sm text-bone placeholder:text-bone-faint transition-colors focus:border-tan focus:outline-none focus:ring-2 focus:ring-tan/30" />
+        </div>
+
+        <div class="sm:col-span-1">
+          <label for="service" class="mb-2 block text-sm font-medium text-bone">Service</label>
+          <select id="service" name="service"
+            class="w-full cursor-pointer rounded-xl border border-ink-line bg-ink px-4 py-3 text-sm text-bone transition-colors focus:border-tan focus:outline-none focus:ring-2 focus:ring-tan/30">
+            {services.map((s) => <option value={s}>{s}</option>)}
+          </select>
+        </div>
+        <div class="sm:col-span-1">
+          <label for="budget" class="mb-2 block text-sm font-medium text-bone">Budget</label>
+          <select id="budget" name="budget"
+            class="w-full cursor-pointer rounded-xl border border-ink-line bg-ink px-4 py-3 text-sm text-bone transition-colors focus:border-tan focus:outline-none focus:ring-2 focus:ring-tan/30">
+            {budgets.map((b) => <option value={b}>{b}</option>)}
+          </select>
+        </div>
+
+        <div class="sm:col-span-2">
+          <label for="message" class="mb-2 block text-sm font-medium text-bone">Project details</label>
+          <textarea id="message" name="message" rows="4" placeholder="Tell us about your brand and what you’re trying to achieve…"
+            class="w-full resize-none rounded-xl border border-ink-line bg-ink px-4 py-3 text-sm text-bone placeholder:text-bone-faint transition-colors focus:border-tan focus:outline-none focus:ring-2 focus:ring-tan/30"></textarea>
+        </div>
+      </div>
+
+      <button type="submit"
+        class="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-red px-6 py-4 text-base font-semibold text-bone transition-all duration-200 hover:bg-red-bright">
+        Deal Me In
+        <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+      <p id="form-note" class="mt-3 text-center text-xs text-bone-faint">We reply within one business day. No spam, ever.</p>
+    </form>
+  </div>
+</section>
+
+<script>
+  // Lightweight client-side feedback (wire to a real endpoint / form service later).
+  const form = document.querySelector<HTMLFormElement>('#contact form');
+  const note = document.getElementById('form-note');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    const btn = form.querySelector('button[type=submit]') as HTMLButtonElement;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    // Simulated success — replace with fetch() to your form handler (Formspree, Resend, etc.)
+    setTimeout(() => {
+      form.reset();
+      btn.disabled = false;
+      btn.textContent = 'Deal Me In';
+      if (note) {
+        note.textContent = '✓ Thanks — your hand is in. We’ll be in touch within one business day.';
+        note.classList.add('text-tan');
+      }
+    }, 900);
+  });
+</script>

@@ -1,0 +1,33 @@
+{
+  "brand": {
+    "name": "Lone Hand Media",
+    "tagline": "Photo · Video · Social"
+  },
+  "hero": {
+    "eyebrow": "Photo · Video · Social",
+    "headlineTop": "Play the",
+    "headlineAccent": "winning hand.",
+    "subhead": "We’re Lone Hand Media — a cinematic photography, videography and social-marketing studio. We craft scroll-stopping content and deal it across every platform so your brand walks away with the pot.",
+    "primaryCta": "Book a Consult",
+    "secondaryCta": "See the Work",
+    "stats": [
+      { "n": "120M+", "l": "Views generated" },
+      { "n": "60+", "l": "Brands backed" },
+      { "n": "5.0★", "l": "Client rating" }
+    ]
+  },
+  "contact": {
+    "email": "hello@lonehandmedia.com",
+    "phone": "(555) 014-2277",
+    "phoneHref": "+15550142277"
+  },
+  "social": [
+    { "platform": "Instagram", "handle": "@lonehandmedia", "href": "https://instagram.com" },
+    { "platform": "TikTok", "handle": "@lonehandmedia", "href": "https://tiktok.com" },
+    { "platform": "YouTube", "handle": "Lone Hand Media", "href": "https://youtube.com" }
+  ],
+  "clients": [
+    "AVERY & CO", "NORTHWIND", "EMBER ROAST", "STÚDIO 9", "VELVET HOUSE",
+    "IRONCLAD GYM", "BLUE HARBOR", "MAISON RÊVE", "PEAK & PINE", "LUNA ATELIER"
+  ]
+}

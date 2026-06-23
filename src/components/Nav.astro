@@ -1,0 +1,97 @@
+---
+import Logo from './Logo.astro';
+
+const links = [
+  { label: 'Work', href: '#work' },
+  { label: 'Services', href: '#services' },
+  { label: 'Process', href: '#process' },
+  { label: 'Pricing', href: '#pricing' },
+];
+---
+
+<header
+  id="site-nav"
+  class="fixed inset-x-0 top-0 z-50 transition-all duration-500"
+>
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
+    <a href="#top" class="cursor-pointer">
+      <Logo />
+    </a>
+
+    <!-- Desktop links -->
+    <ul class="hidden items-center gap-9 md:flex">
+      {
+        links.map((l) => (
+          <li>
+            <a
+              href={l.href}
+              class="group relative text-sm font-medium text-bone-dim transition-colors duration-200 hover:text-bone"
+            >
+              {l.label}
+              <span class="absolute -bottom-1 left-0 h-px w-0 bg-tan transition-all duration-300 group-hover:w-full" />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="hidden md:block">
+      <a
+        href="#contact"
+        class="group inline-flex items-center gap-2 rounded-full border border-tan/40 bg-tan/5 px-5 py-2.5 text-sm font-semibold text-tan transition-all duration-200 hover:border-tan hover:bg-tan hover:text-ink"
+      >
+        Book a Consult
+        <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Mobile burger -->
+    <button
+      id="nav-burger"
+      class="flex h-10 w-10 items-center justify-center rounded-lg border border-ink-line text-bone md:hidden"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="nav-mobile"
+    >
+      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none">
+        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div
+    id="nav-mobile"
+    class="mobile-menu fixed inset-0 top-[68px] z-40 hidden flex-col gap-1 bg-ink/98 px-6 pt-6 backdrop-blur-xl md:hidden"
+  >
+    {
+      links.map((l) => (
+        <a
+          href={l.href}
+          class="border-b border-ink-line py-4 font-display text-2xl text-bone transition-colors hover:text-tan"
+        >
+          {l.label}
+        </a>
+      ))
+    }
+    <a
+      href="#contact"
+      class="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-red px-5 py-3.5 text-base font-semibold text-bone transition-colors hover:bg-red-bright"
+    >
+      Book a Consult
+    </a>
+  </div>
+</header>
+
+<style>
+  #site-nav.nav-solid {
+    background: color-mix(in srgb, var(--color-ink) 78%, transparent);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--color-ink-line);
+  }
+  .mobile-menu.open {
+    display: flex;
+  }
+</style>

@@ -1,0 +1,24 @@
+{
+  "eyebrow": "Table Talk",
+  "title": "Brands that played their hand with us.",
+  "items": [
+    {
+      "quote": "Lone Hand turned our flat feed into a brand people actually screenshot. Bookings doubled in two months.",
+      "name": "Avery Sloan",
+      "role": "Founder, Avery & Co",
+      "suit": "♠"
+    },
+    {
+      "quote": "The reels they produced hit 4M views and sold out our launch. Genuinely the best creative partner we’ve had.",
+      "name": "Marco DeLuca",
+      "role": "Owner, Ember Roast",
+      "suit": "♥"
+    },
+    {
+      "quote": "Cinematic, fast and dialed into the numbers. They treat our growth like it’s their own pot to win.",
+      "name": "Priya Nair",
+      "role": "CMO, Blue Harbor",
+      "suit": "♦"
+    }
+  ]
+}

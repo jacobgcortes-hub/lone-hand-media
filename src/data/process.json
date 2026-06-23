@@ -1,0 +1,11 @@
+{
+  "eyebrow": "How We Work",
+  "title": "A simple play, run every time.",
+  "intro": "No mystery, no wasted motion. Four moves take you from kickoff to compounding results.",
+  "steps": [
+    { "n": "01", "title": "The Ante", "copy": "We dig into your brand, audience and goals — then map the content that moves the needle." },
+    { "n": "02", "title": "The Deal", "copy": "Shoot days, scripts and shot lists. We capture a full hand of photo and video in one efficient session." },
+    { "n": "03", "title": "The Play", "copy": "Editing, grading and platform-native cuts. Everything is scheduled and posted on a tested cadence." },
+    { "n": "04", "title": "The Pot", "copy": "We track performance, double down on winners and report the numbers that matter to your bottom line." }
+  ]
+}

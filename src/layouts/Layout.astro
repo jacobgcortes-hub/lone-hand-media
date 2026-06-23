@@ -1,0 +1,92 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = 'Lone Hand Media — Cinematic Photography, Video & Social Marketing',
+  description = 'Lone Hand Media is a cinematic photo, video and social-media marketing studio. We deal you a winning hand: scroll-stopping content built to grow your brand.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0a0a0b" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="antialiased">
+    <slot />
+
+    <script>
+      // Scroll-reveal: add .is-visible when elements enter the viewport.
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const els = document.querySelectorAll<HTMLElement>('[data-reveal]');
+
+      if (reduce || !('IntersectionObserver' in window)) {
+        els.forEach((el) => el.classList.add('is-visible'));
+      } else {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                (entry.target as HTMLElement).classList.add('is-visible');
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.16, rootMargin: '0px 0px -8% 0px' }
+        );
+        els.forEach((el) => io.observe(el));
+      }
+
+      // Nav background on scroll
+      const nav = document.getElementById('site-nav');
+      if (nav) {
+        const onScroll = () => nav.classList.toggle('nav-solid', window.scrollY > 24);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+      }
+
+      // Mobile menu toggle
+      const burger = document.getElementById('nav-burger');
+      const menu = document.getElementById('nav-mobile');
+      if (burger && menu) {
+        burger.addEventListener('click', () => {
+          const open = menu.classList.toggle('open');
+          burger.setAttribute('aria-expanded', String(open));
+          document.body.style.overflow = open ? 'hidden' : '';
+        });
+        menu.querySelectorAll('a').forEach((a) =>
+          a.addEventListener('click', () => {
+            menu.classList.remove('open');
+            burger.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+          })
+        );
+      }
+    </script>
+  </body>
+</html>

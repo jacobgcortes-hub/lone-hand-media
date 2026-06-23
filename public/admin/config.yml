@@ -1,0 +1,174 @@
+# Sveltia / Decap CMS configuration for Lone Hand Media.
+# Each entry below maps a data file in src/data/ to friendly form fields.
+#
+# backend: git-gateway works once the site is deployed to Netlify with
+# Identity + Git Gateway enabled (see CLAUDE.md / the deploy steps).
+# To swap to a direct GitHub login instead, replace with:
+#   backend:
+#     name: github
+#     repo: your-username/your-repo
+backend:
+  name: git-gateway
+  branch: main
+
+# Lets you preview & edit the CMS locally during `npm run dev` by also
+# running:  npx @sveltia/cms-proxy-server
+local_backend: true
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  # ----------------------------------------------------------------- Site
+  - name: site
+    label: "Brand & Global"
+    description: "Business name, hero, contact details, social links, client list."
+    files:
+      - name: settings
+        label: "Site Settings"
+        file: "src/data/site.json"
+        fields:
+          - label: "Brand"
+            name: "brand"
+            widget: "object"
+            fields:
+              - { label: "Business name", name: "name", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+          - label: "Hero (top of page)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Headline — line 1", name: "headlineTop", widget: "string" }
+              - { label: "Headline — line 2 (accent)", name: "headlineAccent", widget: "string" }
+              - { label: "Sub-headline", name: "subhead", widget: "text" }
+              - { label: "Primary button", name: "primaryCta", widget: "string" }
+              - { label: "Secondary button", name: "secondaryCta", widget: "string" }
+              - label: "Stats"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - { label: "Number", name: "n", widget: "string" }
+                  - { label: "Label", name: "l", widget: "string" }
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Phone (display)", name: "phone", widget: "string" }
+              - { label: "Phone (dial, e.g. +15550142277)", name: "phoneHref", widget: "string" }
+          - label: "Social links"
+            name: "social"
+            widget: "list"
+            fields:
+              - { label: "Platform", name: "platform", widget: "select", options: ["Instagram", "TikTok", "YouTube"] }
+              - { label: "Handle", name: "handle", widget: "string" }
+              - { label: "URL", name: "href", widget: "string" }
+          - label: "Client names (marquee)"
+            name: "clients"
+            widget: "list"
+
+  # ------------------------------------------------------------- Services
+  - name: services
+    label: "Services"
+    files:
+      - name: services
+        label: "Services Section"
+        file: "src/data/services.json"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Intro", name: "intro", widget: "text" }
+          - label: "Services"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Suit", name: "suit", widget: "select", options: ["♠", "♥", "♣", "♦"] }
+              - { label: "Accent color", name: "tone", widget: "select", options: ["bone", "red"] }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "copy", widget: "text" }
+              - { label: "Bullet points", name: "points", widget: "list" }
+
+  # ----------------------------------------------------------------- Work
+  - name: work
+    label: "Portfolio"
+    files:
+      - name: work
+        label: "Portfolio Section"
+        file: "src/data/work.json"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Intro", name: "intro", widget: "text" }
+          - label: "Projects"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Category", name: "cat", widget: "select", options: ["Photo", "Video", "Social"] }
+              - { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Type", name: "kind", widget: "select", options: ["photo", "reel"] }
+              - { label: "Image", name: "image", widget: "image", required: false }
+              - { label: "Tall tile? (advanced)", name: "span", widget: "select", options: ["", "lg:row-span-2"], required: false }
+              - { label: "Fallback gradient (advanced)", name: "bg", widget: "string", required: false }
+
+  # -------------------------------------------------------------- Process
+  - name: process
+    label: "Process"
+    files:
+      - name: process
+        label: "Process Section"
+        file: "src/data/process.json"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Intro", name: "intro", widget: "text" }
+          - label: "Steps"
+            name: "steps"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "n", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "copy", widget: "text" }
+
+  # -------------------------------------------------------------- Pricing
+  - name: pricing
+    label: "Pricing"
+    files:
+      - name: pricing
+        label: "Pricing Section"
+        file: "src/data/pricing.json"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Intro", name: "intro", widget: "text" }
+          - label: "Tiers"
+            name: "tiers"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Suit", name: "suit", widget: "select", options: ["♠", "♥", "♣", "♦"] }
+              - { label: "Price (or 'Custom')", name: "price", widget: "string" }
+              - { label: "Cadence (e.g. / month)", name: "cadence", widget: "string", required: false }
+              - { label: "Blurb", name: "blurb", widget: "text" }
+              - { label: "Features", name: "features", widget: "list" }
+              - { label: "Highlight as most popular?", name: "featured", widget: "boolean", default: false }
+
+  # --------------------------------------------------------- Testimonials
+  - name: testimonials
+    label: "Testimonials"
+    files:
+      - name: testimonials
+        label: "Testimonials Section"
+        file: "src/data/testimonials.json"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - label: "Quotes"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role / Company", name: "role", widget: "string" }
+              - { label: "Suit", name: "suit", widget: "select", options: ["♠", "♥", "♣", "♦"] }

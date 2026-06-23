@@ -1,0 +1,34 @@
+{
+  "eyebrow": "Pick Your Hand",
+  "title": "Packages built to scale with you.",
+  "intro": "Transparent tiers, no hidden chips. Start with a single play or sit down for the full table.",
+  "tiers": [
+    {
+      "name": "High Card",
+      "suit": "♠",
+      "price": "1,500",
+      "cadence": "/ project",
+      "blurb": "A focused shoot for brands that need a strong single play.",
+      "features": ["Half-day photo or video shoot", "15 edited photos or 3 reels", "1 round of revisions", "Platform-ready exports", "Usage rights included"],
+      "featured": false
+    },
+    {
+      "name": "Full House",
+      "suit": "♥",
+      "price": "3,800",
+      "cadence": "/ month",
+      "blurb": "Our most-played hand — a steady stream of content that compounds.",
+      "features": ["Full-day shoot monthly", "40 photos + 8 short-form videos", "Content calendar & scheduling", "Community management", "Monthly performance report", "Priority turnaround"],
+      "featured": true
+    },
+    {
+      "name": "Royal Flush",
+      "suit": "♦",
+      "price": "Custom",
+      "cadence": "",
+      "blurb": "The full table — content, strategy and paid growth, fully managed.",
+      "features": ["Everything in Full House", "Multi-day & multi-location shoots", "Paid ad creative + spend mgmt", "Brand films & campaigns", "Dedicated creative lead", "Quarterly strategy sessions"],
+      "featured": false
+    }
+  ]
+}

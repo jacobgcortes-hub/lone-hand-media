@@ -1,0 +1,71 @@
+---
+import Section from './Section.astro';
+import data from '../data/pricing.json';
+const tiers = data.tiers;
+---
+
+<section id="pricing" class="relative py-24 md:py-32">
+  <div class="mx-auto max-w-7xl px-5 md:px-8">
+    <Section eyebrow={data.eyebrow} title={data.title} intro={data.intro} />
+
+    <div class="mt-16 grid items-stretch gap-6 lg:grid-cols-3">
+      {
+        tiers.map((t, i) => (
+          <article
+            class={`relative flex flex-col rounded-3xl border p-8 transition-all duration-300 ${
+              t.featured
+                ? 'border-tan/50 bg-gradient-to-b from-ink-card to-ink shadow-2xl shadow-red/10 lg:-mt-4 lg:mb-4'
+                : 'border-ink-line bg-ink-card hover:border-tan/30'
+            }`}
+            data-reveal
+            style={`--reveal-delay:${i * 120}ms`}
+          >
+            {t.featured && (
+              <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-red px-4 py-1 text-xs font-semibold uppercase tracking-wider text-bone">
+                Most Popular
+              </span>
+            )}
+
+            <div class="flex items-center justify-between">
+              <h3 class="font-display text-2xl font-semibold text-bone">{t.name}</h3>
+              <span class={`text-3xl ${i === 1 ? 'text-red-bright' : 'text-tan'}`}>{t.suit}</span>
+            </div>
+            <p class="mt-2 text-sm text-bone-dim">{t.blurb}</p>
+
+            <div class="mt-6 flex items-end gap-1">
+              {t.price !== 'Custom' && <span class="font-sans text-2xl font-semibold text-bone-dim">$</span>}
+              <span class="font-sans text-5xl font-bold tracking-tight text-bone">{t.price}</span>
+              <span class="mb-2 text-sm text-bone-faint">{t.cadence}</span>
+            </div>
+
+            <ul class="mt-7 flex-1 space-y-3 border-t border-ink-line pt-7">
+              {t.features.map((f) => (
+                <li class="flex items-start gap-3 text-sm text-bone-dim">
+                  <svg class={`mt-0.5 h-4 w-4 shrink-0 ${t.featured ? 'text-red-bright' : 'text-tan'}`} viewBox="0 0 16 16" fill="none">
+                    <path d="M3 8.5l3 3 7-7.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  {f}
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href="#contact"
+              class={`mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold transition-all duration-200 ${
+                t.featured
+                  ? 'bg-red text-bone hover:bg-red-bright'
+                  : 'border border-tan/40 text-tan hover:border-tan hover:bg-tan hover:text-ink'
+              }`}
+            >
+              {t.price === 'Custom' ? 'Request a Quote' : 'Get Started'}
+            </a>
+          </article>
+        ))
+      }
+    </div>
+
+    <p class="mt-8 text-center text-sm text-bone-faint" data-reveal>
+      Not sure which hand to play? <a href="#contact" class="text-tan underline-offset-4 hover:underline">Book a free consult</a> and we’ll deal you the right one.
+    </p>
+  </div>
+</section>

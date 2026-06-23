@@ -1,0 +1,55 @@
+---
+/**
+ * Lone Hand Media logo — handwritten signature styling.
+ *  - variant="mark"  → just the card emblem
+ *  - variant="full"  → emblem + wordmark (default)
+ */
+interface Props {
+  variant?: 'mark' | 'full';
+  class?: string;
+}
+const { variant = 'full', class: className = '' } = Astro.props;
+
+const spade =
+  'M16 4.2c0 0 9.4 6.8 9.4 12.6a4.7 4.7 0 0 1-8.5 2.8c.7 1.9 1.8 3.6 3 4.8h-7.8c1.2-1.2 2.3-2.9 3-4.8a4.7 4.7 0 0 1-8.5-2.8C6.6 11 16 4.2 16 4.2Z';
+const pip = // small spade pip for corners / accents
+  'M5 0.5c0 0 4 2.9 4 5.4a2 2 0 0 1-3.6 1.2c.3.8.8 1.5 1.3 2.05H3.3c.5-.55 1-1.25 1.3-2.05A2 2 0 0 1 1 5.9C1 3.4 5 .5 5 .5Z';
+---
+
+<span class={`inline-flex items-center gap-3 ${className}`} aria-label="Lone Hand Media">
+  <!-- Card emblem -->
+  <svg
+    class="h-10 w-auto shrink-0"
+    viewBox="0 0 44 60"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    role="img"
+    aria-hidden="true"
+  >
+    <rect x="1.5" y="1.5" width="41" height="57" rx="6" fill="#15151a" stroke="#c9a878" stroke-width="1.5" />
+    <rect x="4.5" y="4.5" width="35" height="51" rx="3.5" fill="none" stroke="#a07a45" stroke-width="0.75" opacity="0.6" />
+
+    <!-- small spade pips in opposing corners -->
+    <path d={pip} transform="translate(6 6) scale(0.9)" fill="#c9a878" />
+    <path d={pip} transform="translate(38 54) rotate(180) scale(0.9)" fill="#c9a878" />
+
+    <!-- center spade -->
+    <g transform="translate(6 13) scale(0.95)">
+      <path d={spade} fill="#c1121f" />
+      <path d={spade} fill="none" stroke="#e3cda7" stroke-width="0.6" opacity="0.45" />
+    </g>
+  </svg>
+
+  {
+    variant === 'full' && (
+      <span class="flex flex-col leading-none">
+        <span class="font-display text-[1.7rem] font-semibold leading-[0.85] text-bone">Lone Hand</span>
+        <span class="mt-0.5 flex items-center gap-1.5 text-[0.58rem] font-semibold uppercase tracking-[0.36em] text-tan">
+          <span class="h-px w-3 bg-tan/50" />
+          Media
+          <span class="h-px w-3 bg-tan/50" />
+        </span>
+      </span>
+    )
+  }
+</span>
