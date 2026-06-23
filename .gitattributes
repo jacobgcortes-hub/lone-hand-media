@@ -1,0 +1,2 @@
+# Normalize line endings so the LF/CRLF warnings stop and diffs stay clean.
+* text=auto eol=lf
