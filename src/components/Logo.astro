@@ -1,46 +1,15 @@
 ---
 /**
- * Lone Hand Media logo — Ace of Spades card emblem + signature wordmark.
- *  - variant="mark"  → just the card emblem
- *  - variant="full"  → emblem + wordmark (default)
+ * Lone Hand Media logo — signature-script wordmark.
+ * (Wordmark only: "Lone Hand" in script + "Media" in letterspaced serif.)
  */
 interface Props {
-  variant?: 'mark' | 'full';
   class?: string;
 }
-const { variant = 'full', class: className = '' } = Astro.props;
-
-const spade =
-  'M16 3C16 3 26 10 26 17a4.6 4.6 0 0 1-8.2 2.9c.5 1.8 1.6 3.4 2.7 4.6H11.5c1.1-1.2 2.2-2.8 2.7-4.6A4.6 4.6 0 0 1 6 17C6 10 16 3 16 3Z';
+const { class: className = '' } = Astro.props;
 ---
 
-<span class={`inline-flex items-center gap-3 ${className}`} aria-label="Lone Hand Media">
-  <!-- Ace of Spades card emblem -->
-  <svg class="h-10 w-auto shrink-0" viewBox="0 0 70 98" fill="none" role="img" aria-hidden="true">
-    <rect x="2" y="2" width="66" height="94" rx="10" fill="#15151a" stroke="#c9a878" stroke-width="2" />
-    <rect x="6.5" y="6.5" width="57" height="85" rx="6" fill="none" stroke="#a07a45" stroke-width="1" opacity="0.5" />
-
-    <!-- top-left index -->
-    <text x="10" y="22" font-family="'Dancing Script', cursive" font-size="17" font-weight="700" fill="#f4efe6">A</text>
-    <g transform="translate(11 24) scale(0.32)"><path d={spade} fill="#c1121f" /></g>
-
-    <!-- center spade -->
-    <g transform="translate(21 34) scale(1.05)">
-      <path d={spade} fill="#c1121f" />
-      <path d={spade} fill="none" stroke="#e3cda7" stroke-width="0.5" opacity="0.5" />
-    </g>
-
-    <!-- bottom-right index -->
-    <text x="60" y="76" font-family="'Dancing Script', cursive" font-size="17" font-weight="700" fill="#f4efe6" transform="rotate(180 56 71)">A</text>
-    <g transform="translate(57 72) rotate(180) scale(0.32)"><path d={spade} fill="#c1121f" /></g>
-  </svg>
-
-  {
-    variant === 'full' && (
-      <span class="flex flex-col leading-none">
-        <span class="font-display text-[1.7rem] font-semibold leading-[0.82] text-bone">Lone Hand</span>
-        <span class="mt-1 text-[0.58rem] font-semibold uppercase tracking-[0.4em] text-tan">Media</span>
-      </span>
-    )
-  }
+<span class={`inline-flex flex-col leading-none ${className}`} aria-label="Lone Hand Media">
+  <span class="font-script text-[2rem] leading-[0.7] text-bone">Lone Hand</span>
+  <span class="mt-0.5 self-center font-display text-[0.62rem] font-semibold uppercase tracking-[0.5em] text-tan" style="padding-left:0.5em">Media</span>
 </span>

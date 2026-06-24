@@ -26,8 +26,9 @@
   --color-tan-deep: #a07a45;
   --color-tan-soft: #e3cda7;
 
-  /* Typography — handwritten display + clean sans for body & numerals */
-  --font-display: 'Dancing Script', 'Segoe Script', cursive;
+  /* Typography — refined serif headings, signature script for the wordmark */
+  --font-display: 'Cormorant Garamond', ui-serif, Georgia, serif;
+  --font-script: 'Great Vibes', 'Segoe Script', cursive;
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
 
   /* Easing */
@@ -65,10 +66,16 @@ body {
   }
 }
 
-/* Handwritten display utility (headings, logo, accents — never body text) */
+/* Refined serif display utility (headings) */
 .font-display {
   font-family: var(--font-display);
   font-optical-sizing: auto;
+}
+
+/* Signature script (logo wordmark + hero accent) */
+.font-script {
+  font-family: var(--font-script);
+  font-weight: 400;
 }
 
 /* Felt-grain backdrop used on dark sections */
