@@ -1,18 +1,15 @@
-# Sveltia / Decap CMS configuration for Lone Hand Media.
+# Decap CMS configuration for Lone Hand Media.
 # Each entry below maps a data file in src/data/ to friendly form fields.
 #
-# backend: git-gateway works once the site is deployed to Netlify with
-# Identity + Git Gateway enabled (see CLAUDE.md / the deploy steps).
-# To swap to a direct GitHub login instead, replace with:
-#   backend:
-#     name: github
-#     repo: your-username/your-repo
+# Login is via GitHub. OAuth is brokered by Netlify, so the matching GitHub
+# OAuth app's Client ID + Secret must be registered in Netlify under
+# Site configuration > Access & security > OAuth > Install provider (GitHub).
 backend:
-  name: git-gateway
+  name: github
+  repo: jacobgcortes-hub/lone-hand-media
   branch: main
 
-# Lets you preview & edit the CMS locally during `npm run dev` by also
-# running:  npx @sveltia/cms-proxy-server
+# Lets you preview & edit the CMS locally during `npm run dev`.
 local_backend: true
 
 media_folder: "public/uploads"
