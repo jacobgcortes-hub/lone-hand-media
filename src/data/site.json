@@ -11,23 +11,52 @@
     "primaryCta": "Book a Consult",
     "secondaryCta": "See the Work",
     "stats": [
-      { "n": "120M+", "l": "Views generated" },
-      { "n": "60+", "l": "Brands backed" },
-      { "n": "5.0★", "l": "Client rating" }
+      {
+        "n": "120M+",
+        "l": "Views generated"
+      },
+      {
+        "n": "60+",
+        "l": "Brands backed"
+      },
+      {
+        "n": "5.0★",
+        "l": "Client rating"
+      }
     ]
   },
   "contact": {
     "email": "contact@lonehandmedia.com",
-    "phone": "(555) 014-2277",
-    "phoneHref": "+15550142277"
+    "phone": "+19517649030",
+    "phoneHref": "+19517649030"
   },
   "social": [
-    { "platform": "Instagram", "handle": "@lonehandmedia", "href": "https://instagram.com" },
-    { "platform": "TikTok", "handle": "@lonehandmedia", "href": "https://tiktok.com" },
-    { "platform": "YouTube", "handle": "Lone Hand Media", "href": "https://youtube.com" }
+    {
+      "platform": "Instagram",
+      "handle": "@lonehandmedia",
+      "href": "https://instagram.com/lonehandmedia"
+    },
+    {
+      "platform": "TikTok",
+      "handle": "@lonehandmedia",
+      "href": "https://tiktok.com/lonehandmedia"
+    },
+    {
+      "platform": "YouTube",
+      "handle": "Lone Hand Media",
+      "href": "https://youtube.com/lonehandmedia"
+    }
   ],
   "clients": [
-    "AVERY & CO", "NORTHWIND", "EMBER ROAST", "STÚDIO 9", "VELVET HOUSE",
-    "IRONCLAD GYM", "BLUE HARBOR", "MAISON RÊVE", "PEAK & PINE", "LUNA ATELIER"
+    "AVERY & CO",
+    "NORTHWIND",
+    "EMBER ROAST",
+    "STÚDIO 9",
+    "VELVET HOUSE",
+    "IRONCLAD GYM",
+    "BLUE HARBOR",
+    "MAISON RÊVE",
+    "PEAK & PINE",
+    "LUNA ATELIER"
   ]
 }
