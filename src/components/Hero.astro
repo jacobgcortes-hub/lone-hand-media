@@ -24,10 +24,10 @@ const hand = [
     <!-- Copy -->
     <div class="text-center lg:text-left">
       <p
-        class="mb-6 inline-flex items-center gap-2 rounded-full border border-ink-line bg-ink-card/60 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.28em] text-tan"
+        class="mb-7 inline-flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.5em] text-tan"
         data-reveal
       >
-        <span class="inline-block h-1.5 w-1.5 rounded-full bg-red"></span>
+        <span class="h-px w-9 bg-tan/55"></span>
         {hero.eyebrow}
       </p>
 
@@ -91,19 +91,19 @@ const hand = [
         {
           hand.map((c, i) => (
             <div
-              class="deal-card floaty absolute left-1/2 top-1/2 h-56 w-40 -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-tan/40 bg-gradient-to-b from-[#1c1c22] to-ink p-2.5 shadow-2xl shadow-black/70"
+              class="deal-card floaty absolute left-1/2 top-1/2 h-56 w-40 -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-tan/60 bg-gradient-to-b from-[#17171c] to-[#0b0b0d] p-2 shadow-2xl shadow-black/70 ring-1 ring-inset ring-tan/10"
               style={`--rot:${c.rot}deg; --dx:${c.dx}; --dr:${c.dr}; --delay:${c.delay}ms; --float-delay:${i * 700}ms; transform-origin:center bottom; margin-left:${(i - 2) * 38}px; z-index:${10 + i};`}
             >
-              {/* inset frame */}
-              <div class="flex h-full w-full flex-col justify-between rounded-xl border border-tan/20 p-3">
-                <span class="font-sans text-xl font-bold leading-none text-red-bright">
+              {/* inset gold frame */}
+              <div class="flex h-full w-full flex-col justify-between rounded-xl border border-tan/35 p-3">
+                <span class="font-display text-2xl font-semibold leading-none text-tan">
                   {c.rank}
-                  <span class="mt-0.5 block text-base leading-none">{suit}</span>
+                  <span class="mt-0.5 block text-sm leading-none text-red-bright">{suit}</span>
                 </span>
-                <span class="self-center text-5xl text-red-bright drop-shadow-[0_2px_10px_rgba(226,21,42,0.35)]">{suit}</span>
-                <span class="rotate-180 self-start font-sans text-xl font-bold leading-none text-red-bright">
+                <span class="self-center text-[3.25rem] text-red-bright drop-shadow-[0_2px_14px_rgba(226,21,42,0.45)]">{suit}</span>
+                <span class="rotate-180 self-start font-display text-2xl font-semibold leading-none text-tan">
                   {c.rank}
-                  <span class="mt-0.5 block text-base leading-none">{suit}</span>
+                  <span class="mt-0.5 block text-sm leading-none text-red-bright">{suit}</span>
                 </span>
               </div>
             </div>
