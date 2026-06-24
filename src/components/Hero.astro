@@ -67,6 +67,7 @@ const hand = [
       </div>
 
       <!-- Stat strip -->
+      {hero.stats.length > 0 && (
       <dl
         class="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-ink-line pt-7 text-center lg:mx-0 lg:text-left"
         data-reveal
@@ -81,6 +82,7 @@ const hand = [
           ))
         }
       </dl>
+      )}
     </div>
 
     <!-- Fanned hand of cards -->

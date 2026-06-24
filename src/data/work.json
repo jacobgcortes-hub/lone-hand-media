@@ -2,13 +2,5 @@
   "eyebrow": "Selected Work",
   "title": "The cards we’ve played.",
   "intro": "A sample from the deck — brand films, editorial shoots and feeds we’ve grown.",
-  "items": [
-    { "title": "Ember Roast — Launch Film", "cat": "Video", "tag": "Brand Film", "span": "lg:row-span-2", "bg": "from-red-deep via-ink-card to-ink", "kind": "reel", "image": "" },
-    { "title": "Maison Rêve — Lookbook", "cat": "Photo", "tag": "Editorial", "span": "", "bg": "from-tan-deep/40 via-ink-card to-ink", "kind": "photo", "image": "" },
-    { "title": "Ironclad — 30-Day Reels", "cat": "Social", "tag": "Reels", "span": "", "bg": "from-red/30 via-ink-card to-ink", "kind": "reel", "image": "" },
-    { "title": "Blue Harbor — Product", "cat": "Photo", "tag": "Product", "span": "", "bg": "from-ink-card via-ink-soft to-ink", "kind": "photo", "image": "" },
-    { "title": "Velvet House — Campaign", "cat": "Video", "tag": "Ad Creative", "span": "lg:row-span-2", "bg": "from-red/25 via-ink-card to-ink", "kind": "reel", "image": "" },
-    { "title": "Peak & Pine — Feed Refresh", "cat": "Social", "tag": "Strategy", "span": "", "bg": "from-tan-deep/30 via-ink-card to-ink", "kind": "photo", "image": "" },
-    { "title": "Luna Atelier — Headshots", "cat": "Photo", "tag": "Portrait", "span": "", "bg": "from-ink-soft via-ink-card to-ink", "kind": "photo", "image": "" }
-  ]
+  "items": []
 }

@@ -1,18 +1,21 @@
 ---
 import site from '../data/site.json';
-const row = [...site.clients, ...site.clients];
+const clients = site.clients ?? [];
+const row = [...clients, ...clients];
 ---
 
-<section class="border-y border-ink-line bg-ink-soft py-7" aria-label="Trusted by">
-  <div class="marquee mx-auto max-w-7xl overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]">
-    <div class="marquee-track flex w-max items-center gap-14 whitespace-nowrap px-7">
-      {
-        row.map((c) => (
-          <span class="text-base font-semibold uppercase tracking-[0.18em] text-bone-faint transition-colors hover:text-tan">
-            {c}
-          </span>
-        ))
-      }
-    </div>
-  </div>
-</section>
+{
+  clients.length > 0 && (
+    <section class="border-y border-ink-line bg-ink-soft py-7" aria-label="Trusted by">
+      <div class="marquee mx-auto max-w-7xl overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]">
+        <div class="marquee-track flex w-max items-center gap-14 whitespace-nowrap px-7">
+          {row.map((c) => (
+            <span class="text-base font-semibold uppercase tracking-[0.18em] text-bone-faint transition-colors hover:text-tan">
+              {c}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
