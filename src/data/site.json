@@ -14,7 +14,7 @@
   },
   "contact": {
     "email": "contact@lonehandmedia.com",
-    "phone": "+19517649030",
+    "phone": "(951) 764-9030",
     "phoneHref": "+19517649030"
   },
   "social": [
@@ -22,16 +22,6 @@
       "platform": "Instagram",
       "handle": "@lonehandmedia",
       "href": "https://instagram.com/lonehandmedia"
-    },
-    {
-      "platform": "TikTok",
-      "handle": "@lonehandmedia",
-      "href": "https://tiktok.com/lonehandmedia"
-    },
-    {
-      "platform": "YouTube",
-      "handle": "Lone Hand Media",
-      "href": "https://youtube.com/lonehandmedia"
     }
   ],
   "clients": []

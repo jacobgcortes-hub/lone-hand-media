@@ -3,10 +3,10 @@ import Logo from './Logo.astro';
 import site from '../data/site.json';
 
 const cols = [
-  { title: 'Studio', links: [{ l: 'Work', h: '#work' }, { l: 'Services', h: '#services' }, { l: 'Process', h: '#process' }, { l: 'Pricing', h: '#pricing' }] },
+  { title: 'Studio', links: [{ l: 'Work', h: '/#work' }, { l: 'Services', h: '/#services' }, { l: 'Process', h: '/#process' }, { l: 'Pricing', h: '/#pricing' }] },
   {
     title: 'Connect',
-    links: [...site.social.map((s) => ({ l: s.platform, h: s.href })), { l: 'Contact', h: '#contact' }],
+    links: [...site.social.map((s) => ({ l: s.platform, h: s.href })), { l: 'Contact', h: '/#contact' }],
   },
 ];
 ---
@@ -19,6 +19,7 @@ const cols = [
         <p class="mt-5 max-w-xs text-sm leading-relaxed text-bone-dim">
           A cinematic photography, video and social-marketing studio. We deal brands a winning hand.
         </p>
+        <p class="mt-3 text-sm text-bone-faint">Kerrville, Texas · Serving the Hill Country</p>
       </div>
 
       {
