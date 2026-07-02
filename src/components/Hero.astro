@@ -20,7 +20,7 @@ const hand = [
     <div class="absolute bottom-0 right-0 h-[28rem] w-[28rem] rounded-full bg-tan/5 blur-[100px]"></div>
   </div>
 
-  <div class="mx-auto grid w-full max-w-7xl items-center gap-12 px-5 md:px-8 lg:grid-cols-[1.05fr_0.95fr]">
+  <div class="mx-auto grid w-full max-w-7xl items-center gap-12 px-5 md:px-8 lg:grid-cols-[1.05fr_0.95fr]" data-hero-zoom>
     <!-- Copy -->
     <div class="text-center lg:text-left">
       <p
@@ -86,7 +86,7 @@ const hand = [
     </div>
 
     <!-- Fanned hand of cards -->
-    <div class="relative mx-auto hidden h-[26rem] w-full max-w-md select-none lg:block" aria-hidden="true">
+    <div class="relative mx-auto hidden h-[26rem] w-full max-w-md select-none lg:block" aria-hidden="true" data-hero-cards>
       <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         {
           hand.map((c, i) => (
