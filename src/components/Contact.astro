@@ -55,6 +55,9 @@ const contacts = [
       style="--reveal-delay:200ms"
       novalidate
     >
+      <!-- Honeypot: hidden from humans; bots that fill it get silently dropped -->
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden" />
+
       <div class="grid gap-5 sm:grid-cols-2">
         <div class="sm:col-span-1">
           <label for="name" class="mb-2 block text-sm font-medium text-bone">Name</label>
@@ -102,10 +105,12 @@ const contacts = [
 </section>
 
 <script>
-  // Lightweight client-side feedback (wire to a real endpoint / form service later).
+  // Submissions relay through FormSubmit (free) to the studio inbox.
+  const ENDPOINT = 'https://formsubmit.co/ajax/contact@lonehandmedia.com';
+
   const form = document.querySelector<HTMLFormElement>('#contact form');
   const note = document.getElementById('form-note');
-  form?.addEventListener('submit', (e) => {
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!form.checkValidity()) {
       form.reportValidity();
@@ -114,15 +119,33 @@ const contacts = [
     const btn = form.querySelector('button[type=submit]') as HTMLButtonElement;
     btn.disabled = true;
     btn.textContent = 'Sending…';
-    // Simulated success — replace with fetch() to your form handler (Formspree, Resend, etc.)
-    setTimeout(() => {
+    const data = Object.fromEntries(new FormData(form));
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          ...data,
+          _subject: `New inquiry — ${data.name || 'lonehandmedia.com'}`,
+          _template: 'table',
+        }),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const result = await res.json();
+      if (result.success !== 'true' && result.success !== true) throw new Error('relay rejected');
       form.reset();
-      btn.disabled = false;
-      btn.textContent = 'Deal Me In';
       if (note) {
         note.textContent = '✓ Thanks — your hand is in. We’ll be in touch within one business day.';
         note.classList.add('text-tan');
       }
-    }, 900);
+    } catch {
+      if (note) {
+        note.innerHTML =
+          'Something went wrong — please email us directly at <a class="underline text-tan" href="mailto:contact@lonehandmedia.com">contact@lonehandmedia.com</a>.';
+      }
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Deal Me In';
+    }
   });
 </script>
