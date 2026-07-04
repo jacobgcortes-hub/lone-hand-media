@@ -3,7 +3,6 @@ import site from '../data/site.json';
 const { email, phone, phoneHref } = site.contact;
 
 const services = ['Photography', 'Videography', 'Social Marketing', 'Paid & Growth', 'Not sure yet'];
-const budgets = ['$1.5k – $3k', '$3k – $6k', '$6k – $10k', '$10k+'];
 
 const contacts = [
   { label: 'Email', value: email, href: `mailto:${email}` },
@@ -79,10 +78,8 @@ const contacts = [
         </div>
         <div class="sm:col-span-1">
           <label for="budget" class="mb-2 block text-sm font-medium text-bone">Budget</label>
-          <select id="budget" name="budget"
-            class="w-full cursor-pointer rounded-xl border border-ink-line bg-ink px-4 py-3 text-sm text-bone transition-colors focus:border-tan focus:outline-none focus:ring-2 focus:ring-tan/30">
-            {budgets.map((b) => <option value={b}>{b}</option>)}
-          </select>
+          <input id="budget" name="budget" type="text" placeholder="Whatever works for you — e.g. $1,000"
+            class="w-full rounded-xl border border-ink-line bg-ink px-4 py-3 text-sm text-bone placeholder:text-bone-faint transition-colors focus:border-tan focus:outline-none focus:ring-2 focus:ring-tan/30" />
         </div>
 
         <div class="sm:col-span-2">

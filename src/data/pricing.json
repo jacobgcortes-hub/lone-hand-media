@@ -6,7 +6,7 @@
     {
       "name": "High Card",
       "suit": "♠",
-      "price": "1,500",
+      "price": "1,000",
       "cadence": "/ project",
       "blurb": "A focused shoot for brands that need a strong single play.",
       "features": [
@@ -21,7 +21,7 @@
     {
       "name": "Full House",
       "suit": "♥",
-      "price": "3,000",
+      "price": "2,000",
       "cadence": "/ month",
       "blurb": "Our most-played hand — a steady stream of content that compounds.",
       "features": [
