@@ -4,11 +4,30 @@
   "intro": "A sample from the deck — brand films, editorial shoots and feeds we’ve grown.",
   "items": [
     {
+      "title": "Illectric Inc — Brand Film",
+      "cat": "Video",
+      "tag": "Brand Film",
+      "kind": "reel",
+      "image": "/uploads/work/illectric-film-cover.jpg",
+      "video": "https://www.youtube.com/watch?v=S4qd6d-JaFQ",
+      "span": "col-span-2 md:col-span-3 lg:col-span-2 lg:row-span-2",
+      "bg": "from-ink-card to-ink"
+    },
+    {
       "title": "BRUNT Workwear × Illectric — On the Job",
       "cat": "Photo",
       "tag": "Brand Campaign",
       "kind": "photo",
       "image": "/uploads/work/illectric-meter-work.jpg",
+      "span": "lg:row-span-2",
+      "bg": "from-ink-card to-ink"
+    },
+    {
+      "title": "Ground-Level Detail",
+      "cat": "Photo",
+      "tag": "Product",
+      "kind": "photo",
+      "image": "/uploads/work/brunt-boot-crouch.jpg",
       "span": "lg:row-span-2",
       "bg": "from-ink-card to-ink"
     },
@@ -28,15 +47,6 @@
       "kind": "photo",
       "image": "/uploads/work/brunt-boot-step.jpg",
       "span": "",
-      "bg": "from-ink-card to-ink"
-    },
-    {
-      "title": "Ground-Level Detail",
-      "cat": "Photo",
-      "tag": "Product",
-      "kind": "photo",
-      "image": "/uploads/work/brunt-boot-crouch.jpg",
-      "span": "lg:row-span-2",
       "bg": "from-ink-card to-ink"
     },
     {

@@ -36,8 +36,12 @@ const hasWork = projects.length > 0;
           <div class="mt-12 grid auto-rows-[13rem] grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
             {projects.map((p, i) => (
               <article
-                class={`work-item group relative overflow-hidden rounded-2xl border border-ink-line bg-gradient-to-br ${p.bg} ${p.span}`}
+                class={`work-item group relative overflow-hidden rounded-2xl border border-ink-line bg-gradient-to-br ${p.bg} ${p.span} ${p.video ? 'cursor-pointer' : ''}`}
                 data-cat={p.cat}
+                data-video={p.video || undefined}
+                role={p.video ? 'button' : undefined}
+                tabindex={p.video ? 0 : undefined}
+                aria-label={p.video ? `Play video: ${p.title}` : undefined}
                 data-reveal
                 style={`--reveal-delay:${i * 80}ms`}
               >
@@ -108,11 +112,83 @@ const hasWork = projects.length > 0;
       )
     }
   </div>
+
+  <!-- Lightbox for video tiles -->
+  <div
+    id="video-modal"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-ink/90 p-4 backdrop-blur-sm md:p-10"
+    aria-modal="true"
+    role="dialog"
+  >
+    <button
+      id="video-close"
+      class="absolute right-5 top-5 grid h-11 w-11 cursor-pointer place-content-center rounded-full border border-bone/30 text-bone transition-colors hover:border-tan hover:text-tan"
+      aria-label="Close video"
+    >
+      <svg class="h-4 w-4" viewBox="0 0 16 16" fill="none">
+        <path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+      </svg>
+    </button>
+    <div class="aspect-video w-full max-w-5xl overflow-hidden rounded-2xl border border-ink-line bg-ink shadow-2xl shadow-black/60">
+      <iframe
+        id="video-frame"
+        class="h-full w-full"
+        src=""
+        title="Lone Hand Media video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
 </section>
 
 <script>
   const buttons = document.querySelectorAll<HTMLButtonElement>('.work-filter');
   const items = document.querySelectorAll<HTMLElement>('.work-item');
+
+  // --- Video lightbox -------------------------------------------------
+  const modal = document.getElementById('video-modal');
+  const frame = document.getElementById('video-frame') as HTMLIFrameElement | null;
+
+  const youtubeId = (url: string) =>
+    url.match(/(?:youtu\.be\/|[?&]v=|\/embed\/|\/shorts\/)([\w-]{11})/)?.[1] ?? null;
+
+  const openVideo = (url: string) => {
+    const id = youtubeId(url);
+    if (!id || !modal || !frame) return;
+    frame.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeVideo = () => {
+    if (!modal || !frame) return;
+    frame.src = '';
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = '';
+  };
+
+  items.forEach((item) => {
+    const url = item.dataset.video;
+    if (!url) return;
+    item.addEventListener('click', () => openVideo(url));
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openVideo(url);
+      }
+    });
+  });
+
+  document.getElementById('video-close')?.addEventListener('click', closeVideo);
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) closeVideo();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeVideo();
+  });
 
   buttons.forEach((btn) => {
     btn.addEventListener('click', () => {
