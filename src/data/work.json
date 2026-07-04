@@ -2,5 +2,60 @@
   "eyebrow": "Selected Work",
   "title": "The cards we’ve played.",
   "intro": "A sample from the deck — brand films, editorial shoots and feeds we’ve grown.",
-  "items": []
+  "items": [
+    {
+      "title": "BRUNT Workwear × Illectric — On the Job",
+      "cat": "Photo",
+      "tag": "Brand Campaign",
+      "kind": "photo",
+      "image": "/uploads/work/illectric-meter-work.jpg",
+      "span": "lg:row-span-2",
+      "bg": "from-ink-card to-ink"
+    },
+    {
+      "title": "Load-Out at Golden Hour",
+      "cat": "Photo",
+      "tag": "Editorial",
+      "kind": "photo",
+      "image": "/uploads/work/brunt-van-silhouette.jpg",
+      "span": "",
+      "bg": "from-ink-card to-ink"
+    },
+    {
+      "title": "The Step-Up",
+      "cat": "Photo",
+      "tag": "Product",
+      "kind": "photo",
+      "image": "/uploads/work/brunt-boot-step.jpg",
+      "span": "",
+      "bg": "from-ink-card to-ink"
+    },
+    {
+      "title": "Ground-Level Detail",
+      "cat": "Photo",
+      "tag": "Product",
+      "kind": "photo",
+      "image": "/uploads/work/brunt-boot-crouch.jpg",
+      "span": "lg:row-span-2",
+      "bg": "from-ink-card to-ink"
+    },
+    {
+      "title": "Standing on Quality",
+      "cat": "Photo",
+      "tag": "Product",
+      "kind": "photo",
+      "image": "/uploads/work/brunt-boots-detail.jpg",
+      "span": "",
+      "bg": "from-ink-card to-ink"
+    },
+    {
+      "title": "Illectric Fleet Badge",
+      "cat": "Photo",
+      "tag": "Brand Detail",
+      "kind": "photo",
+      "image": "/uploads/work/illectric-grille.jpg",
+      "span": "",
+      "bg": "from-ink-card to-ink"
+    }
+  ]
 }
