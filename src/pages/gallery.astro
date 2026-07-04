@@ -7,7 +7,7 @@ import site from '../data/site.json';
 // When a client gallery/store goes live (e.g. Pixieset), set this URL and the
 // page instantly forwards visitors there. The printed/saved QR code always
 // points at /gallery, so it never has to change.
-const galleryUrl = '';
+const galleryUrl = 'https://lonehandmedia.pixieset.com/lhm/';
 
 const { email, phone, phoneHref } = site.contact;
 const instagram = site.social.find((s) => s.platform === 'Instagram');
@@ -18,6 +18,7 @@ const instagram = site.social.find((s) => s.platform === 'Instagram');
   description="Event and client photo galleries from Lone Hand Media. Scan, browse and order your photos."
 >
   {galleryUrl && <meta http-equiv="refresh" content={`0;url=${galleryUrl}`} />}
+  {galleryUrl && <script is:inline define:vars={{ galleryUrl }}>window.location.replace(galleryUrl);</script>}
   <Nav />
   <main>
     <section class="felt relative flex min-h-[100svh] items-center overflow-hidden pt-28 pb-16">
@@ -33,22 +34,34 @@ const instagram = site.social.find((s) => s.platform === 'Instagram');
         </p>
 
         <h1 class="mt-4 font-display text-4xl font-bold leading-[1.15] text-bone sm:text-5xl">
-          We caught your winning moment.
+          {galleryUrl ? 'Your photos are waiting.' : 'We caught your winning moment.'}
         </h1>
-        <p class="mx-auto mt-5 max-w-lg text-lg leading-relaxed text-bone-dim">
-          Photos from today's shoot are being edited right now. The full gallery — with prints and
-          digital downloads for sale — goes live within 48 hours.
-        </p>
-        <p class="mx-auto mt-3 max-w-lg text-lg leading-relaxed text-bone-dim">
-          Want the link the moment it drops? Send us your name and number and we'll text it to you.
-        </p>
+        {
+          galleryUrl ? (
+            <p class="mx-auto mt-5 max-w-lg text-lg leading-relaxed text-bone-dim">
+              Taking you to the gallery — browse your shots and order prints or digital downloads.
+              If nothing happens, tap the button below.
+            </p>
+          ) : (
+            <>
+              <p class="mx-auto mt-5 max-w-lg text-lg leading-relaxed text-bone-dim">
+                Photos from today's shoot are being edited right now. The full gallery — with prints
+                and digital downloads for sale — goes live within 48 hours.
+              </p>
+              <p class="mx-auto mt-3 max-w-lg text-lg leading-relaxed text-bone-dim">
+                Want the link the moment it drops? Send us your name and number and we'll text it to
+                you.
+              </p>
+            </>
+          )
+        }
 
         <div class="mt-9 flex flex-wrap items-center justify-center gap-4">
           <a
-            href={`sms:${phoneHref}`}
+            href={galleryUrl || `sms:${phoneHref}`}
             class="group inline-flex items-center justify-center gap-2 rounded-full bg-red px-7 py-3.5 text-base font-semibold text-bone shadow-lg shadow-red/20 transition-all duration-200 hover:bg-red-bright hover:shadow-red/30"
           >
-            Text Us Your Name
+            {galleryUrl ? 'Open the Gallery' : 'Text Us Your Name'}
             <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
