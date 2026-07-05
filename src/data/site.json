@@ -22,6 +22,21 @@
       "platform": "Instagram",
       "handle": "@lonehandmedia",
       "href": "https://instagram.com/lonehandmedia"
+    },
+    {
+      "platform": "TikTok",
+      "handle": "@lonehandmedia",
+      "href": "https://www.tiktok.com/@lonehandmedia"
+    },
+    {
+      "platform": "YouTube",
+      "handle": "@lonehandmedia",
+      "href": "https://www.youtube.com/@lonehandmedia"
+    },
+    {
+      "platform": "Facebook",
+      "handle": "lonehandmedia",
+      "href": "https://www.facebook.com/lonehandmedia"
     }
   ],
   "clients": []
