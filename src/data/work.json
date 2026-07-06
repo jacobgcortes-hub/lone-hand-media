@@ -76,6 +76,33 @@
       "image": "/uploads/work/illectric-grille.jpg",
       "span": "",
       "bg": "from-ink-card to-ink"
+    },
+    {
+      "title": "606 Glen Oak — Curb Appeal",
+      "cat": "Photo",
+      "tag": "Real Estate",
+      "kind": "photo",
+      "image": "/uploads/work/glenoak-606-exterior.jpg",
+      "span": "col-span-2 md:col-span-1 lg:col-span-2",
+      "bg": "from-ink-card to-ink"
+    },
+    {
+      "title": "322 Live Oak — Front Elevation",
+      "cat": "Photo",
+      "tag": "Real Estate",
+      "kind": "photo",
+      "image": "/uploads/work/liveoak-322-exterior.jpg",
+      "span": "",
+      "bg": "from-ink-card to-ink"
+    },
+    {
+      "title": "146 Hideaway Circle — Shaded Lot",
+      "cat": "Photo",
+      "tag": "Real Estate",
+      "kind": "photo",
+      "image": "/uploads/work/hideaway-146-exterior.jpg",
+      "span": "",
+      "bg": "from-ink-card to-ink"
     }
   ]
 }
