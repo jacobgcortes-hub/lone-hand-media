@@ -140,6 +140,33 @@
       "image": "/uploads/work/glenoak-606-porch.jpg",
       "span": "",
       "bg": "from-ink-card to-ink"
+    },
+    {
+      "title": "Will Beck — In the Lights",
+      "cat": "Photo",
+      "tag": "Live Music",
+      "kind": "photo",
+      "image": "/uploads/work/willbeck-lights.jpg",
+      "span": "lg:row-span-2",
+      "bg": "from-ink-card to-ink"
+    },
+    {
+      "title": "Will Beck Band — Under the Brim",
+      "cat": "Photo",
+      "tag": "Live Music",
+      "kind": "photo",
+      "image": "/uploads/work/willbeck-bass.jpg",
+      "span": "lg:row-span-2",
+      "bg": "from-ink-card to-ink"
+    },
+    {
+      "title": "Will Beck Live — Fourth on the River",
+      "cat": "Photo",
+      "tag": "Live Music",
+      "kind": "photo",
+      "image": "/uploads/work/willbeck-stage.jpg",
+      "span": "col-span-2 md:col-span-1 lg:col-span-2 lg:row-span-2",
+      "bg": "from-ink-card to-ink"
     }
   ]
 }
