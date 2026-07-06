@@ -103,6 +103,33 @@
       "image": "/uploads/work/hideaway-146-exterior.jpg",
       "span": "",
       "bg": "from-ink-card to-ink"
+    },
+    {
+      "title": "322 Live Oak — Under the Oaks",
+      "cat": "Photo",
+      "tag": "Real Estate",
+      "kind": "photo",
+      "image": "/uploads/work/liveoak-322-oaks.jpg",
+      "span": "col-span-2 md:col-span-1 lg:col-span-2",
+      "bg": "from-ink-card to-ink"
+    },
+    {
+      "title": "322 Live Oak — Shaded Walk-Up",
+      "cat": "Photo",
+      "tag": "Real Estate",
+      "kind": "photo",
+      "image": "/uploads/work/liveoak-322-ramp.jpg",
+      "span": "",
+      "bg": "from-ink-card to-ink"
+    },
+    {
+      "title": "606 Glen Oak — Front Porch",
+      "cat": "Photo",
+      "tag": "Real Estate",
+      "kind": "photo",
+      "image": "/uploads/work/glenoak-606-porch.jpg",
+      "span": "",
+      "bg": "from-ink-card to-ink"
     }
   ]
 }
