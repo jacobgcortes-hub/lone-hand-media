@@ -24,6 +24,16 @@
       "bg": "from-ink-card to-ink"
     },
     {
+      "title": "Real Estate Listing Tour II",
+      "cat": "Video",
+      "tag": "Real Estate",
+      "kind": "reel",
+      "image": "/uploads/work/realestate-video2-cover.jpg",
+      "video": "https://youtu.be/v2MVHb-tZro",
+      "span": "col-span-2 md:col-span-3 lg:col-span-2 lg:row-span-2",
+      "bg": "from-ink-card to-ink"
+    },
+    {
       "title": "BRUNT Workwear × Illectric — On the Job",
       "cat": "Photo",
       "tag": "Brand Campaign",
