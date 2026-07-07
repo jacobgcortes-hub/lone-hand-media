@@ -102,7 +102,7 @@ collections:
             widget: "list"
             fields:
               - { label: "Title", name: "title", widget: "string" }
-              - { label: "Category", name: "cat", widget: "select", options: ["Photo", "Video", "Social"] }
+              - { label: "Category (folder on the Work page)", name: "cat", widget: "select", options: ["Real Estate", "Contractors", "Events"] }
               - { label: "Tag", name: "tag", widget: "string" }
               - { label: "Type", name: "kind", widget: "select", options: ["photo", "reel"] }
               - { label: "Image", name: "image", widget: "image", required: false }
