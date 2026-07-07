@@ -152,6 +152,86 @@ collections:
               - { label: "Features", name: "features", widget: "list" }
               - { label: "Highlight as most popular?", name: "featured", widget: "boolean", default: false }
 
+  # ---------------------------------------------------------- Real Estate
+  - name: realestate
+    label: "Real Estate Page"
+    description: "The listing-media brochure page at /real-estate — packages, à la carte prices, copy."
+    files:
+      - name: realestate
+        label: "Real Estate Page"
+        file: "src/data/realestate.json"
+        fields:
+          - label: "Hero (top of page)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Headline — line 1", name: "headlineTop", widget: "string" }
+              - { label: "Headline — line 2 (accent)", name: "headlineAccent", widget: "string" }
+              - { label: "Sub-headline", name: "subhead", widget: "text" }
+              - { label: "Primary button", name: "primaryCta", widget: "string" }
+              - { label: "Secondary button", name: "secondaryCta", widget: "string" }
+              - label: "Stats"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - { label: "Number", name: "n", widget: "string" }
+                  - { label: "Label", name: "l", widget: "string" }
+          - label: "What's Included section"
+            name: "included"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Intro", name: "intro", widget: "text" }
+              - label: "Services"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Suit", name: "suit", widget: "select", options: ["♠", "♥", "♣", "♦"] }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "copy", widget: "text" }
+          - label: "Packages section"
+            name: "packages"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Intro", name: "intro", widget: "text" }
+              - label: "Packages"
+                name: "tiers"
+                widget: "list"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Suit", name: "suit", widget: "select", options: ["♠", "♥", "♣", "♦"] }
+                  - { label: "Price", name: "price", widget: "string" }
+                  - { label: "Cadence (e.g. / listing)", name: "cadence", widget: "string", required: false }
+                  - { label: "Blurb", name: "blurb", widget: "text" }
+                  - { label: "Features", name: "features", widget: "list" }
+                  - { label: "Highlight as most booked?", name: "featured", widget: "boolean", default: false }
+          - label: "À la carte section"
+            name: "alacarte"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Intro", name: "intro", widget: "text" }
+              - label: "Services & prices"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Service", name: "name", widget: "string" }
+                  - { label: "Price (e.g. $125 or from $175)", name: "price", widget: "string" }
+                  - { label: "Details line", name: "note", widget: "string" }
+              - { label: "Fine print (travel area etc.)", name: "finePrint", widget: "text" }
+          - label: "Bottom call-to-action"
+            name: "cta"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Copy", name: "copy", widget: "text" }
+              - { label: "Button", name: "button", widget: "string" }
+
   # --------------------------------------------------------- Testimonials
   - name: testimonials
     label: "Testimonials"

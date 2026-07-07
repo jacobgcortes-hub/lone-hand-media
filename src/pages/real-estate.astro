@@ -1,0 +1,218 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Section from '../components/Section.astro';
+import data from '../data/realestate.json';
+
+const { hero, included, packages, alacarte, cta } = data;
+---
+
+<Layout
+  title="Real Estate Photography, Video & Aerials | Lone Hand Media — Kerrville, TX"
+  description="Per-listing real estate media for Texas Hill Country agents: HDR photos, drone aerials, twilight shoots, cinematic video tours and social reels. Flat rates from $249, next-day photo delivery."
+>
+  <Nav />
+  <main>
+    <!-- ============================================================ Hero -->
+    <section id="top" class="felt relative flex min-h-[88svh] items-center overflow-hidden pt-28 pb-16 md:pt-32">
+      <div class="mx-auto w-full max-w-7xl px-5 md:px-8">
+        <div class="max-w-3xl">
+          <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.28em] text-tan" data-reveal>
+            <span class="h-px w-6 bg-tan/60"></span>
+            {hero.eyebrow}
+          </p>
+          <h1
+            class="mt-5 font-display text-5xl font-bold leading-[1.06] text-bone sm:text-6xl md:text-7xl"
+            data-reveal
+            style="--reveal-delay:90ms"
+          >
+            {hero.headlineTop}
+            <span class="font-script mt-2 block text-[0.95em] font-normal leading-[1.15] shimmer-text">{hero.headlineAccent}</span>
+          </h1>
+          <p class="mt-6 max-w-xl text-lg leading-relaxed text-bone-dim" data-reveal style="--reveal-delay:180ms">
+            {hero.subhead}
+          </p>
+
+          <div class="mt-9 flex flex-wrap items-center gap-4" data-reveal style="--reveal-delay:270ms">
+            <a
+              href="/#contact"
+              class="inline-flex items-center gap-2 rounded-full bg-red px-7 py-3.5 text-sm font-semibold text-bone transition-colors duration-200 hover:bg-red-bright"
+            >
+              {hero.primaryCta}
+              <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+            <a
+              href="#packages"
+              class="inline-flex items-center gap-2 rounded-full border border-tan/40 px-7 py-3.5 text-sm font-semibold text-tan transition-all duration-200 hover:border-tan hover:bg-tan hover:text-ink"
+            >
+              {hero.secondaryCta}
+            </a>
+          </div>
+
+          <dl class="mt-14 flex flex-wrap gap-x-12 gap-y-6 border-t border-ink-line pt-8" data-reveal style="--reveal-delay:360ms">
+            {
+              hero.stats.map((s) => (
+                <div>
+                  <dt class="sr-only">{s.l}</dt>
+                  <dd class="font-sans text-3xl font-bold tracking-tight text-bone">{s.n}</dd>
+                  <dd class="mt-1 text-xs font-medium uppercase tracking-[0.18em] text-bone-faint">{s.l}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+      </div>
+
+      <!-- Oversized suit watermark -->
+      <span
+        aria-hidden="true"
+        class="pointer-events-none absolute -right-10 top-1/2 -translate-y-1/2 select-none font-display text-[26rem] leading-none text-tan/[0.05] md:text-[38rem]"
+        >♦</span
+      >
+    </section>
+
+    <!-- ================================================== What's included -->
+    <section id="included" class="relative py-24 md:py-32">
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <Section eyebrow={included.eyebrow} title={included.title} intro={included.intro} />
+
+        <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {
+            included.items.map((item, i) => (
+              <article
+                class="group rounded-3xl border border-ink-line bg-ink-card p-8 transition-all duration-300 hover:border-tan/30"
+                data-reveal
+                style={`--reveal-delay:${(i % 3) * 120}ms`}
+              >
+                <span class={`text-3xl ${i % 2 === 0 ? 'text-tan' : 'text-red-bright'}`}>{item.suit}</span>
+                <h3 class="mt-4 font-display text-2xl font-semibold text-bone">{item.title}</h3>
+                <p class="mt-3 text-sm leading-relaxed text-bone-dim">{item.copy}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= Packages -->
+    <section id="packages" class="felt relative py-24 md:py-32">
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <Section eyebrow={packages.eyebrow} title={packages.title} intro={packages.intro} />
+
+        <div class="mt-16 grid items-stretch gap-6 lg:grid-cols-3">
+          {
+            packages.tiers.map((t, i) => (
+              <article
+                class={`relative flex flex-col rounded-3xl border p-8 transition-all duration-300 ${
+                  t.featured
+                    ? 'border-tan/50 bg-gradient-to-b from-ink-card to-ink shadow-2xl shadow-red/10 lg:-mt-4 lg:mb-4'
+                    : 'border-ink-line bg-ink-card hover:border-tan/30'
+                }`}
+                data-reveal
+                style={`--reveal-delay:${i * 120}ms`}
+              >
+                {t.featured && (
+                  <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-red px-4 py-1 text-xs font-semibold uppercase tracking-wider text-bone">
+                    Most Booked
+                  </span>
+                )}
+
+                <div class="flex items-center justify-between">
+                  <h3 class="font-display text-2xl font-semibold text-bone">{t.name}</h3>
+                  <span class={`text-3xl ${i === 1 ? 'text-red-bright' : 'text-tan'}`}>{t.suit}</span>
+                </div>
+                <p class="mt-2 text-sm text-bone-dim">{t.blurb}</p>
+
+                <div class="mt-6 flex items-end gap-1">
+                  <span class="font-sans text-2xl font-semibold text-bone-dim">$</span>
+                  <span class="font-sans text-5xl font-bold tracking-tight text-bone">{t.price}</span>
+                  <span class="mb-2 text-sm text-bone-faint">{t.cadence}</span>
+                </div>
+
+                <ul class="mt-7 flex-1 space-y-3 border-t border-ink-line pt-7">
+                  {t.features.map((f) => (
+                    <li class="flex items-start gap-3 text-sm text-bone-dim">
+                      <svg class={`mt-0.5 h-4 w-4 shrink-0 ${t.featured ? 'text-red-bright' : 'text-tan'}`} viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8.5l3 3 7-7.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href="/#contact"
+                  class={`mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold transition-all duration-200 ${
+                    t.featured
+                      ? 'bg-red text-bone hover:bg-red-bright'
+                      : 'border border-tan/40 text-tan hover:border-tan hover:bg-tan hover:text-ink'
+                  }`}
+                >
+                  Book This Package
+                </a>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== À la carte -->
+    <section id="alacarte" class="relative py-24 md:py-32">
+      <div class="mx-auto max-w-5xl px-5 md:px-8">
+        <Section eyebrow={alacarte.eyebrow} title={alacarte.title} intro={alacarte.intro} />
+
+        <div class="mt-14 overflow-hidden rounded-3xl border border-ink-line bg-ink-card" data-reveal>
+          {
+            alacarte.items.map((item, i) => (
+              <div
+                class={`flex flex-col gap-1 px-6 py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6 md:px-8 ${
+                  i > 0 ? 'border-t border-ink-line' : ''
+                }`}
+              >
+                <div>
+                  <h3 class="font-display text-xl font-semibold text-bone">{item.name}</h3>
+                  <p class="mt-0.5 text-sm text-bone-faint">{item.note}</p>
+                </div>
+                <span class="shrink-0 font-sans text-lg font-bold tracking-tight text-tan">{item.price}</span>
+              </div>
+            ))
+          }
+        </div>
+
+        <p class="mt-8 text-center text-sm text-bone-faint" data-reveal>{alacarte.finePrint}</p>
+      </div>
+    </section>
+
+    <!-- ============================================================== CTA -->
+    <section id="cta" class="felt relative py-24 md:py-32">
+      <div class="mx-auto max-w-3xl px-5 text-center md:px-8">
+        <div class="rule-gold mx-auto mb-12 w-40" data-reveal></div>
+        <h2
+          class="font-display text-4xl font-bold leading-[1.15] text-bone sm:text-5xl"
+          data-reveal
+          style="--reveal-delay:90ms"
+          set:html={cta.title}
+        />
+        <p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-bone-dim" data-reveal style="--reveal-delay:180ms">
+          {cta.copy}
+        </p>
+        <a
+          href="/#contact"
+          class="mt-9 inline-flex items-center gap-2 rounded-full bg-red px-8 py-4 text-sm font-semibold text-bone transition-colors duration-200 hover:bg-red-bright"
+          data-reveal
+          style="--reveal-delay:270ms"
+        >
+          {cta.button}
+          <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

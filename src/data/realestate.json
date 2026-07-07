@@ -1,0 +1,124 @@
+{
+  "hero": {
+    "eyebrow": "Real Estate Media · Texas Hill Country",
+    "headlineTop": "Listings that sell the",
+    "headlineAccent": "moment they hit the market.",
+    "subhead": "Magazine-quality photos, aerial coverage, twilight shoots and cinematic video tours for Hill Country agents — delivered MLS-ready, most photos by the next day.",
+    "primaryCta": "Book a Shoot",
+    "secondaryCta": "See Packages",
+    "stats": [
+      { "n": "Next-Day", "l": "Photo delivery" },
+      { "n": "$249", "l": "Photos + aerials" },
+      { "n": "All-in-One", "l": "Photo · video · drone" }
+    ]
+  },
+  "included": {
+    "eyebrow": "Everything Buyers Scroll For",
+    "title": "One shooter. <em class=\"not-italic text-tan\">Every angle.</em>",
+    "intro": "No juggling a photographer, a drone pilot and a videographer. One visit covers the ground, the air and the golden hour.",
+    "items": [
+      {
+        "suit": "♠",
+        "title": "HDR Listing Photography",
+        "copy": "Bright, true-to-color interiors and exteriors with clear window views — the photos that stop the scroll on Zillow and MLS."
+      },
+      {
+        "suit": "♦",
+        "title": "Aerial Photos & Video",
+        "copy": "Drone coverage that shows the whole story — lot lines, acreage, river frontage and those Hill Country views."
+      },
+      {
+        "suit": "♥",
+        "title": "Twilight Shoots",
+        "copy": "Blue-hour exteriors with warm windows glowing against the dusk sky — the hero shot that makes a listing feel like a destination."
+      },
+      {
+        "suit": "♣",
+        "title": "Cinematic Video Tours",
+        "copy": "Smooth walkthrough films with aerials woven in, graded in our signature cinematic style. Built for the listing page and YouTube."
+      },
+      {
+        "suit": "♠",
+        "title": "Vertical Reels for Social",
+        "copy": "15–30 second cuts sized for Instagram, TikTok and Facebook — so the listing markets itself while you take calls."
+      },
+      {
+        "suit": "♦",
+        "title": "Fast, MLS-Ready Delivery",
+        "copy": "Photos delivered next day in MLS and print resolution through an easy online gallery. Video within 48–72 hours."
+      }
+    ]
+  },
+  "packages": {
+    "eyebrow": "Listing Packages",
+    "title": "Flat rates. <em class=\"not-italic text-tan\">No surprises.</em>",
+    "intro": "Per-listing pricing built for agents. Book one shoot or put us on speed dial for every listing you take.",
+    "tiers": [
+      {
+        "name": "The Pair",
+        "suit": "♣",
+        "price": "249",
+        "cadence": "/ listing",
+        "blurb": "The MLS essentials — crisp photos plus aerials that show the whole lot.",
+        "features": [
+          "Up to 30 HDR photos, interior & exterior",
+          "8–10 aerial drone photos",
+          "Homes up to 2,500 sq ft",
+          "Next-day delivery",
+          "MLS + print-resolution files"
+        ],
+        "featured": false
+      },
+      {
+        "name": "The Straight",
+        "suit": "♥",
+        "price": "449",
+        "cadence": "/ listing",
+        "blurb": "Day, air and twilight in a single visit — the full first-impression play.",
+        "features": [
+          "Everything in The Pair",
+          "Twilight exterior shoot (6–8 shots)",
+          "Aerial video flyover, color graded",
+          "Homes up to 3,500 sq ft",
+          "Priority next-day delivery"
+        ],
+        "featured": true
+      },
+      {
+        "name": "The Flush",
+        "suit": "♦",
+        "price": "749",
+        "cadence": "/ listing",
+        "blurb": "The full film treatment for listings that deserve a premiere.",
+        "features": [
+          "Everything in The Straight",
+          "Cinematic walkthrough film (2–3 min)",
+          "15–30s vertical reel for social",
+          "Agent intro & branding on video",
+          "Any size home",
+          "Video delivered in 48–72 hours"
+        ],
+        "featured": false
+      }
+    ]
+  },
+  "alacarte": {
+    "eyebrow": "À La Carte",
+    "title": "Just need one thing? <em class=\"not-italic text-tan\">Deal.</em>",
+    "intro": "Every service stands on its own, or bolts onto any package.",
+    "items": [
+      { "name": "HDR Listing Photos", "price": "from $175", "note": "Up to 30 photos · homes to 2,500 sq ft · +$25 per extra 1,000 sq ft" },
+      { "name": "Aerial Drone Photos", "price": "$125", "note": "8–10 graded aerial shots · $75 as an add-on to any shoot" },
+      { "name": "Aerial Video Flyover", "price": "$175", "note": "Graded drone footage of the property and surroundings" },
+      { "name": "Twilight Shoot", "price": "$150", "note": "6–8 blue-hour exteriors with glowing windows" },
+      { "name": "Cinematic Video Tour", "price": "from $375", "note": "2–3 minute ground + aerial walkthrough film" },
+      { "name": "Vertical Social Reel", "price": "$125", "note": "15–30s cut for Instagram / TikTok · $75 as an add-on" }
+    ],
+    "finePrint": "Travel included within 30 miles of Kerrville — Fredericksburg, Comfort, Ingram, Center Point and Bandera. Farther out? Ask — we love a drive through the Hill Country."
+  },
+  "cta": {
+    "title": "Your next listing deserves the <em class=\"not-italic text-tan\">winning hand.</em>",
+    "copy": "Send the address and your target list date — we'll confirm the shoot, chase the light and have photos back before your first showing.",
+    "button": "Book Your Listing Shoot"
+  }
+}
