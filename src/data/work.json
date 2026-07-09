@@ -149,6 +149,33 @@
       "image": "/uploads/work/willbeck-stage.jpg",
       "span": "col-span-2 md:col-span-1 lg:col-span-2 lg:row-span-2",
       "bg": "from-ink-card to-ink"
+    },
+    {
+      "title": "Gillespie County Fair Races — Out of the Gates",
+      "cat": "Events",
+      "tag": "Live Events",
+      "kind": "photo",
+      "image": "/uploads/work/horseraces-gate-break.jpg",
+      "span": "lg:row-span-2",
+      "bg": "from-ink-card to-ink"
+    },
+    {
+      "title": "Gillespie County Fair Races — Into the Turn",
+      "cat": "Events",
+      "tag": "Live Events",
+      "kind": "photo",
+      "image": "/uploads/work/horseraces-turn-flag.jpg",
+      "span": "lg:row-span-2",
+      "bg": "from-ink-card to-ink"
+    },
+    {
+      "title": "Gillespie County Fair Races — The Field in Motion",
+      "cat": "Events",
+      "tag": "Live Events",
+      "kind": "photo",
+      "image": "/uploads/work/horseraces-collage.jpg",
+      "span": "col-span-2 md:col-span-1 lg:col-span-2 lg:row-span-2",
+      "bg": "from-ink-card to-ink"
     }
   ]
 }
