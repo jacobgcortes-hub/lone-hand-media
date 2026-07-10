@@ -4,6 +4,24 @@
   "intro": "A sample from the deck — home listings, job-site campaigns and live events, all shot the Lone Hand way.",
   "items": [
     {
+      "title": "5 Rio Robles — Hill Country Curb Appeal",
+      "cat": "Real Estate",
+      "tag": "Listing Photos",
+      "kind": "photo",
+      "image": "/uploads/work/rio-robles-5-exterior.jpg",
+      "span": "col-span-2 md:col-span-3 lg:col-span-2 lg:row-span-2",
+      "bg": "from-ink-card to-ink"
+    },
+    {
+      "title": "5 Rio Robles — Farmhouse Kitchen",
+      "cat": "Real Estate",
+      "tag": "Listing Photos",
+      "kind": "photo",
+      "image": "/uploads/work/rio-robles-5-kitchen.jpg",
+      "span": "col-span-2 md:col-span-3 lg:col-span-2 lg:row-span-2",
+      "bg": "from-ink-card to-ink"
+    },
+    {
       "title": "Real Estate Listing Tour — 606 Glen Oak",
       "cat": "Real Estate",
       "tag": "Listing Film",
@@ -29,7 +47,7 @@
       "tag": "Listing Photos",
       "kind": "photo",
       "image": "/uploads/work/glenoak-606-porch.jpg",
-      "span": "",
+      "span": "md:col-span-2 lg:col-span-1",
       "bg": "from-ink-card to-ink"
     },
     {
@@ -47,7 +65,7 @@
       "tag": "Listing Photos",
       "kind": "photo",
       "image": "/uploads/work/liveoak-322-ramp.jpg",
-      "span": "",
+      "span": "md:col-span-2 lg:col-span-1",
       "bg": "from-ink-card to-ink"
     },
     {
